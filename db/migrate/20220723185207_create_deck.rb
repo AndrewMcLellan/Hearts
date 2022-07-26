@@ -1,0 +1,7 @@
+class CreateDeck < ActiveRecord::Migration[5.2]
+  def change
+    create_table :decks do |t|
+      t.string :deck_id, null: false
+    end
+  end
+end
