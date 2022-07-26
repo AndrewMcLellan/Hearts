@@ -1,7 +1,13 @@
 import React from 'react'
+import { Router } from '@reach/router';
+import Home from './Home';
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <Router>
+      <Home path='/' />
+    </Router>
+  )
 }
 
 export default App

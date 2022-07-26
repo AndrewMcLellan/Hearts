@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_23_161707) do
+ActiveRecord::Schema.define(version: 2022_07_26_031229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "suit", null: false
+    t.string "value", null: false
+    t.string "code", null: false
+    t.string "png"
+    t.string "svg"
+    t.bigint "deck_id"
+    t.index ["deck_id"], name: "index_cards_on_deck_id"
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.string "deck_id", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
